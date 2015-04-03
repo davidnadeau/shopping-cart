@@ -9,6 +9,9 @@ class ProductTest extends TestCase {
     public function testGetAllRoute()
     {
         $response = $this->call('GET', "/api/v1/products");
+        // check that the response was successful
+        $this->assertTrue($response->isOk());
+
         $content = $response->getContent();
         $products = $content->products;
         $paging = $content->paging;
@@ -16,6 +19,5 @@ class ProductTest extends TestCase {
         $this->assertTrue(is_array($products));
         // check that the paging information is being returned
         $this->assertFalse(empty($paging));
-        $this->assertTrue($response->isOk());
     }
 }

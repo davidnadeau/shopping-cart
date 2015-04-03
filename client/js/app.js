@@ -4,7 +4,8 @@ var BASE = "http://54.191.210.109/api/",
 angular.module('dnStore.shoppingCart', [
 	'ui.router',
 	'dnStore.shoppingCart.controllers',
-	'dnStore.shoppingCart.services'
+	'dnStore.shoppingCart.services',
+	'dnStore.shoppingCart.directives'
 ])
 	.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 		var mainState = {

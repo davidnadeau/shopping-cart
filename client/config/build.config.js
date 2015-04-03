@@ -12,7 +12,8 @@ module.exports = {
 	shoppingCartFiles: [
 		'js/app.js',
 		'js/controllers/*.js',
-		'js/services/*.js'
+		'js/services/*.js',
+		'js/directives/*.js'
 	],
 	vendorFiles: [
 		'bower_components/angular/angular.js',

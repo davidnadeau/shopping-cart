@@ -10,3 +10,13 @@ body {
     font-family: RobotoDraft, Roboto, 'Helvetica Neue', sans-serif;
 }
 
+.dn-fab {
+    position: fixed;
+    bottom:3%;
+    right:3%;
+}
+.dn-progress-linear {
+    height: 12px;
+    margin-top: -6px;
+}
+

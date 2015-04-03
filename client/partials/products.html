@@ -1,5 +1,5 @@
-<md-progress-linear ng-show="loading" class="aa-progress-linear" md-mode="indeterminate"></md-progress-linear>
-<md-content ng-hide="loading">
+<md-progress-linear ng-show="loading" class="dn-progress-linear" md-mode="indeterminate"></md-progress-linear>
+<md-content>
     <md-list>
         <div infinite-scroll="loadProducts()"
              infinite-scroll-disabled="loading"
@@ -8,7 +8,7 @@
             <md-item ng-repeat="product in products" flex-gt-lg="20" flex-lg="25" flex-md="33" flex-sm="50">
                 <md-card>
                     <md-item-content  md-ink-ripple class="aa-item" layout="column">
-                        <img ng-src="{{product.image_path}}">
+                        <img fallback-src="../images/img-not-found.png" ng-src="{{product.image_path}}">
 
                         <h2>{{product.name}}</h2>
 
@@ -27,3 +27,6 @@
         </div>
     </md-list>
 </md-content>
+<md-button class="md-fab dn-fab" aria-label="View Cart" ng-click="viewCart($event)">
+    <md-icon md-svg-src="img/icons/cake.svg"></md-icon>
+</md-button>

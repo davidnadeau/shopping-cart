@@ -7,7 +7,7 @@
  */
 class Product extends Eloquent
 {
-    const PAGE_SIZE = 25;
+    const PAGE_SIZE = 50;
     /**
      * The database table used by the model.
      *

@@ -1,0 +1,29 @@
+<md-progress-linear ng-show="loading" class="aa-progress-linear" md-mode="indeterminate"></md-progress-linear>
+<md-content ng-hide="loading">
+    <md-list>
+        <div infinite-scroll="loadProducts()"
+             infinite-scroll-disabled="loading"
+             infinite-scroll-distance="1"
+             layout="row" layout-wrap>
+            <md-item ng-repeat="product in products" flex-gt-lg="20" flex-lg="25" flex-md="33" flex-sm="50">
+                <md-card>
+                    <md-item-content  md-ink-ripple class="aa-item" layout="column">
+                        <img ng-src="{{product.image_path}}">
+
+                        <h2>{{product.name}}</h2>
+
+                        <h3>{{product.price}}</h3>
+                        <md-button
+                                class="aa-delete-button"
+                                aria-label="Delete Product"
+                                ng-click="addToCart(product, $event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                            </svg>
+                        </md-button>
+                    </md-item-content>
+                </md-card>
+            </md-item>
+        </div>
+    </md-list>
+</md-content>

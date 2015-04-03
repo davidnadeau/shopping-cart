@@ -13,7 +13,7 @@ def randomPrice(i, j):
 
 # Create the insert statements to quickly load product database.
 def buildSQL(movieTitle, imagePath):
-	return 'INSERT INTO products (id, name, price, image_path, updated_at, created_at) VALUES (NULL,'+ movieTitle+', '+randomPrice(5,50)+', '+imagePath+', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);'
+	return 'INSERT INTO products (name, price, image_path) VALUES (\''+ movieTitle+'\', '+randomPrice(5,50)+', \''+imagePath+'\');\n'
 
 # Read all the movies in movies.txt.
 # Get a path to the first image returned from google images.
@@ -26,12 +26,11 @@ def generateData():
 		r = requests.get(BASE_URL+movieTitle)
 		res = json.loads(r.text)['responseData']
 		if res is not None:
-			print('success')
 			imagePath = res['results'][0]['unescapedUrl']
 		else:
 			print('failed')
 			imagePath = 'http://www.sitindia.com/res/img/img-not-found.png'
-		f.write(buildSQL(movieTitle, imagePath)+'\n')
+		f.write(buildSQL(movieTitle, imagePath))
 		# google gets angry if I try any faster :(
 		time.sleep(10)
 	f.close()

@@ -6,5 +6,5 @@ angular.module('dnStore.shoppingCart.controllers', [
 	'ngMaterial',
 	'infinite-scroll',
 	'dnStore.shoppingCart.controllers.MainController',
-	'dnStore.shoppingCart.controllers.ProductsController'
+	'dnStore.shoppingCart.controllers.ProductController'
 ]);

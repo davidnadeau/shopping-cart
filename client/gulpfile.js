@@ -4,11 +4,13 @@ var gulp = require('gulp'),
 	header = require('gulp-header'),
 	footer = require('gulp-footer'),
 	rename = require('gulp-rename'),
+	karma = require('karma').server,
 	buildConfig = require('./config/build.config.js');
 
 gulp.task('default', ['build']);
 
 gulp.task('build', [
+	'tests',
 	'scripts',
 	'vendor'
 ], function () {
@@ -42,6 +44,15 @@ gulp.task('vendor', function () {
 	return gulp.src(buildConfig.vendorFiles)
 		.pipe(gulp.dest('dist/vendor'))
 
+});
+
+gulp.task('tests', function(done) {
+	karma.start({
+		configFile: __dirname + '/karma.conf.js',
+		singleRun: true
+	}, function() {
+		done();
+	});
 });
 
 gulp.task('watch', ['build'], function () {

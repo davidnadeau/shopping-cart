@@ -10,26 +10,25 @@
     "gulp-header": "^1.2.2",
     "gulp-jshint": "^1.9.0",
     "gulp-rename": "^1.2.0",
-    "gulp-uglify": "^1.1.0"
-  
+    "gulp-uglify": "^1.1.0",
+    "karma": "^0.12.31"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jasmine-core": "^2.2.0",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.1.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/davidnadeau/shopping-cart"
-  
   },
   "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/davidnadeau/shopping-cart/issues"
-  
   },
   "homepage": "https://github.com/davidnadeau/shopping-cart"
-
 }
-

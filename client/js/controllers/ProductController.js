@@ -1,5 +1,5 @@
-angular.module('dnStore.shoppingCart.controllers.ProductsController', [])
-	.controller('ProductsController', ['$scope', 'PaginatedProducts', 'Cart', '$mdToast','$animate', function ($scope, PaginatedProducts, Cart, $mdToast, $animate) {
+angular.module('dnStore.shoppingCart.controllers.ProductController', [])
+	.controller('ProductController', ['$scope', 'PaginatedProducts', 'Cart', '$mdToast', '$animate', function ($scope, PaginatedProducts, Cart, $mdToast, $animate) {
 		PaginatedProducts.init();
 		$scope.loading = false;
 		$scope.products = [];
@@ -18,7 +18,7 @@ angular.module('dnStore.shoppingCart.controllers.ProductsController', [])
 				if ($scope.noMoreItems) return;
 				if (productList.length === 0) $scope.noMoreItems = true;
 				productList.forEach(function (product) {
-					product.qty=1;
+					product.qty = 1;
 					$scope.products.push(product);
 				})
 			})
@@ -27,18 +27,28 @@ angular.module('dnStore.shoppingCart.controllers.ProductsController', [])
 			Cart.remove(product);
 		};
 		$scope.addToCart = function (product, event) {
-			if (angular.isNumber(product.qty) && product.qty > 0) {
+			if ($scope.isValidQuantity(product.qty)) {
 				Cart.add(product);
+				var pluralCheck = product.qty === 1 ? 'copy' : 'copies';
+				$mdToast.show($mdToast.simple()
+						.content('Purchased ' + product.qty + ' ' + pluralCheck + ' of ' + product.name)
+						.position("bottom right")
+				);
 				$scope.$parent.itemCount = Cart.count();
 				$scope.$parent.totalPrice = Cart.totalPrice();
-				product.qty=1;
+				product.qty = 1;
 			} else {
 				$mdToast.show($mdToast.simple()
-					.content('Invalid Quantity')
-					.position("bottom right")
+						.content('Invalid Quantity')
+						.position("top right")
 				);
 			}
 		};
+
+		$scope.isValidQuantity = function (qty) {
+			return angular.isNumber(qty) && qty > 0;
+		};
+
 		$scope.viewCart = function (event) {
 			console.log(Cart.all())
 		};

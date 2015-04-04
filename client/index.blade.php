@@ -11,7 +11,6 @@
 
 	<body ng-app="dnStore.shoppingCart" ng-strict-di>
         <div ui-view></div>
-
 		<script src="dist/vendor.js"></script>
         <script src="dist/shopping-cart.js"></script>
 	</body>

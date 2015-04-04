@@ -9,7 +9,9 @@ body {
     text-rendering: optimizeLegibility;
     font-family: RobotoDraft, Roboto, 'Helvetica Neue', sans-serif;
 }
-
+md-toast {
+    position:fixed;
+}
 .dn-fab {
     position: fixed;
     bottom:3%;

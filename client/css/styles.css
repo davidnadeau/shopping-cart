@@ -20,3 +20,30 @@ body {
     margin-top: -6px;
 }
 
+.product-list {}
+.product-list .product {
+    padding-bottom: 16px;
+}
+.product-list .product .add-to-cart-button{
+}
+
+.product-list .product .details {
+    width:100%;
+    background-color: rgba(0,0,0,0.8);
+    margin-top:-100px;
+}
+.product-list .product .details h2{
+    padding-left:8px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 0.9em;
+    color: rgba(255,255,255,0.87);
+}
+.product-list .product .details h3{
+    padding-right:12px;
+    text-align: right;
+    font-weight: 400;
+    font-size: 0.7em;
+    color: rgba(255,255,255,0.54);
+}
+

@@ -19,4 +19,11 @@ class Product extends Eloquent
     {
         return $query->paginate(self::PAGE_SIZE);
     }
+
+    // ensure that the price is being passed as a float instead of being converted to
+    // a string when being serialized
+    public function getPriceAttribute($value)
+    {
+        return (float)$value;
+    }
 }

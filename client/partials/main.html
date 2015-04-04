@@ -1,6 +1,25 @@
-<md-toolbar>
-    <h2 class="md-toolbar-tools">
-        <span>Top Movie Shack</span>
-    </h2>
+<md-toolbar class="md-tall dn-header">
+    <div layout="row">
+        <h2 class="md-toolbar-tools">
+            <span>Top Movie Shack</span>
+        </h2>
+        <div class="cart-summary" layout="row">
+            <img src="../images/add-to-cart.png">
+            <h3><span class="label">Items:</span> {{itemCount}}</h3>
+            <h3><span class="label">Total:</span> {{totalPrice|currency}}</h3>
+        </div>
+    </div>
+</md-toolbar>
+<md-toolbar class="dn-hidden-header">
+    <div layout="row">
+        <h2 class="md-toolbar-tools">
+            <span>Top Movie Shack</span>
+        </h2>
+        <div class="cart-summary" layout="row">
+            <img src="../images/add-to-cart.png">
+            <h3><span class="label">Items:</span> {{itemCount}}</h3>
+            <h3><span class="label">Total:</span> {{totalPrice|currency}}</h3>
+        </div>
+    </div>
 </md-toolbar>
 <div ui-view></div>

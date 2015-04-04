@@ -68,7 +68,7 @@ def generateData():
 	BASE_PATH = 'images'
 	os.makedirs(BASE_PATH)
 	# sites preventing hotlinking images
-	blacklist = ['www.imdb.com','ia.media-imdb.com','topmoviecenters.com','www.viz4u.net','forum.indowebster.com']
+	blacklist = ['www.imdb.com','ia.media-imdb.com','topmoviecenters.com','www.viz4u.net','forum.indowebster.com','fomindir.com']
 
 	BASE_URL = 'https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q='
 	movieTitles = [movieTitle.strip() for movieTitle in codecs.open('movies.txt','r','iso-8859-1')]
@@ -103,7 +103,7 @@ def generateData():
 
 		f.write(buildSQL(movieTitle, fileName))
 		# google gets angry if we download any faster
-		time.sleep(1.5)
+		time.sleep(2)
 
 	f.close()
 

@@ -11,8 +11,8 @@ module.exports = {
 	closureEnd: '\n})();',
 	shoppingCartFiles: [
 		'js/app.js',
-		'js/controllers/*.js',
 		'js/services/*.js',
+		'js/controllers/*.js',
 		'js/directives/*.js'
 	],
 	vendorFiles: [
@@ -24,8 +24,6 @@ module.exports = {
 		'bower_components/angular-aria/angular-aria.min.js',
 		'bower_components/angular-material/angular-material.js',
 		'bower_components/angular-material/angular-material.min.js',
-		'bower_components/angular-material-icons/angular-material-icons.js',
-		'bower_components/angular-material-icons/angular-material-icons.min.js',
 		'bower_components/angular-resource/angular-resource.js',
 		'bower_components/angular-resource/angular-resource.min.js',
 		'bower_components/angular-ui-router/release/angular-ui-router.js',
@@ -40,7 +38,6 @@ module.exports = {
 		'dist/vendor/angular-animate.js',
 		'dist/vendor/angular-aria.js',
 		'dist/vendor/angular-material.js',
-		'dist/vendor/angular-material-icons.js',
 		'dist/vendor/angular-resource.js',
 		'dist/vendor/angular-ui-router.js',
 		'dist/vendor/hammer.js',

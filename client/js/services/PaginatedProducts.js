@@ -26,8 +26,8 @@ angular.module('dnStore.shoppingCart.services.PaginatedProducts', [])
 				isLoading = false;
 				callback(res.products);
 			}, function (err) {
-				// TODO: better error checking. Since under high load, the server may
-				// return errors, this case would need to be handled.
+				// TODO: better error checking. Under high load, the server may
+				// return errors here.
 				console.log(err);
 			});
 		}

@@ -1,6 +1,7 @@
 angular.module('dnStore.shoppingCart.controllers.CartController', [])
 	.controller('CartController', ['$scope', "Cart", "Orders", "$state", "$mdToast",
 		function ($scope, Cart, Orders, $state, $mdToast) {
+			$scope.$parent.backButtonVisible = true;
 			refreshCartTotals();
 
 
@@ -16,15 +17,14 @@ angular.module('dnStore.shoppingCart.controllers.CartController', [])
 			}
 			function isValidOrder() {
 				return angular.isNumber($scope.totalPrice) && $scope.totalPrice > 0;
-			};
+			}
 
 			$scope.getImage = function (fileName) {
 				return S3_BUCKET + fileName;
 			};
 			$scope.placeOrder = function () {
-				console.log(Cart.toJson());
 				if (isValidOrder()) {
-					Orders.place({order:Cart.toJson()}, function(res){console.log(res)},function(err){console.log(err)});
+					Orders.place({order:Cart.toJson()});
 					$state.go('store.success');
 				}
 				else $mdToast.show($mdToast.simple().content('Invalid Order'));

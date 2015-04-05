@@ -1,6 +1,7 @@
 angular.module('dnStore.shoppingCart.controllers.ProductController', [])
 	.controller('ProductController', ['$scope', 'PaginatedProducts', 'Cart', '$mdToast', '$state',
 		function ($scope, PaginatedProducts, Cart, $mdToast, $state) {
+			$scope.$parent.backButtonVisible = false;
 			PaginatedProducts.init();
 
 			// Update the cart summary on load

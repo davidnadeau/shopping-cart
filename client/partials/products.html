@@ -1,6 +1,6 @@
 <md-progress-linear ng-show="loading" class="dn-progress-linear" md-mode="indeterminate"></md-progress-linear>
-<md-content>
-    <md-list class="product-list">
+<md-content class="product-list">
+    <md-list>
         <div infinite-scroll="loadProducts()"
              infinite-scroll-disabled="loading"
              infinite-scroll-distance="1"
@@ -12,21 +12,23 @@
                         <img fallback-src="../images/img-not-found.png" ng-src="{{getImage(product.image_path)}}">
 
                         <div class="details">
-                            <div layout="row" layout-align="start start">
-                                <h2 flex="70">{{product.name}}</h2>
-                                <div flex="30" layout="column">
-                                    <h3>{{product.price|currency}}</h3>
-                                    <div layout="row">
-                                        <md-input-container md-no-float>
-                                            <input class="qty" type="number" step="1" ng-model="product.qty" min="1" max="100">
-                                        </md-input-container>
-                                        <md-button
-                                                class="add-to-cart-button"
-                                                aria-label="Delete Product"
-                                                ng-click="addToCart(product, $event)">
-                                            <img src="../images/add-to-cart.png">
-                                        </md-button>
-                                    </div>
+                            <div layout="column">
+                                <div layout="row" layout-align="start start">
+                                    <h2 flex="70">{{product.name}}</h2>
+                                    <h3 flex="30">{{product.price|currency}}</h3>
+                                </div>
+                                <div layout="row" layout-align="end start">
+                                    <md-input-container flex="30" md-no-float>
+                                        <input class="qty" type="number" step="1" ng-model="product.qty" min="1"
+                                               max="100">
+                                    </md-input-container>
+                                    <md-button
+                                            flex="30"
+                                            class="add-to-cart-button"
+                                            aria-label="Delete Product"
+                                            ng-click="addToCart(product, $event)">
+                                        <img src="../images/add-to-cart.png">
+                                    </md-button>
                                 </div>
                             </div>
                         </div>
@@ -38,5 +40,5 @@
 </md-content>
 <div class="dn-fab-padding"></div>
 <md-button class="md-primary md-fab dn-fab" aria-label="Checkout" ng-click="viewCart($event)">
-    <md-icon icon="https://material.angularjs.org/img/icons/ic_photo_24px.svg"></md-icon>
+    <md-icon md-svg-icon="../images/shopping_cart.svg"></md-icon>
 </md-button>

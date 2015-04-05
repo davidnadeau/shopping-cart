@@ -1,7 +1,10 @@
+<md-button ng-show="backButtonVisible" class="md-icon-button back-button" aria-label="More" ng-click="backHistory()">
+    <md-icon md-svg-icon="../images/arrow_back.svg"></md-icon>
+</md-button>
 <md-toolbar class="md-tall dn-header">
     <div layout="row">
         <h2 class="md-toolbar-tools">
-            <span>Top Movie Shack</span>
+            <span ng-class="{'back-button-padding': backButtonVisible}">Top Movie Shack</span>
         </h2>
         <div class="cart-summary" layout="row">
             <img src="../images/add-to-cart.png">
@@ -13,7 +16,7 @@
 <md-toolbar class="dn-hidden-header">
     <div layout="row">
         <h2 class="md-toolbar-tools">
-            <span>Top Movie Shack</span>
+            <span ng-class="{'back-button-padding': backButtonVisible}">Top Movie Shack</span>
         </h2>
         <div class="cart-summary" layout="row">
             <img src="../images/add-to-cart.png">

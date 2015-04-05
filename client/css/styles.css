@@ -24,6 +24,15 @@ md-toast {
 .dn-header {
     z-index:20;
 }
+.back-button{
+    position:fixed;
+    top: 12px;
+    left: 4px;
+    z-index:21;
+}
+.back-button-padding {
+    margin-left: 32px;
+}
 .dn-header .cart-summary {
     top: 8px;
     right: 8px;
@@ -75,10 +84,11 @@ md-toast {
 .product-list .product .details {
     width:100%;
     background-color: rgba(0,0,0,0.8);
-    margin-top:-95px;
+    margin-top:-85px;
 }
 .product-list .product .details h2{
-    padding-left:8px;
+    margin:0;
+    padding: 4px 0 0 8px;
     text-align: left;
     font-weight: 400;
     font-size: 0.9em;
@@ -95,23 +105,50 @@ md-toast {
     width: 24px;
     height: 24px;
 }
+.product-list .product md-input-container {
+    padding:0;
+}
 .product-list .product .details .qty{
-    color: #ffffff;
+    margin: 4px 0 0 8px;
+    width:60px;
+    color: rgba(255,255,255,0.87);
 }
 
-.cart-review {}
+.cart-review {
+    margin:24px;
+}
 .cart-review .product {
     padding-left: 16px;
     padding-right: 16px;
 }
+.cart-review .product h4 {
+    padding-left:24px;
+    font-weight: 400;
+    font-size: 1.0em;
+}
+.cart-review .product h5 {
+    padding-left:24px;
+    font-weight: 400;
+    font-size: 0.8em;
+    margin:0;
+}
+.cart-review .product md-input-container {
+    padding:0;
+}
+.cart-review .product input {
+    padding-left:24px;
+    font-weight: 400;
+    font-size: 0.8em;
+    width:60px;
+}
 .cart-review .rounded-image {
-    border-radius: 50%;
+    border-radius: 10%;
     border: 1px solid #ddd;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
 .cart-review .order-summary {
-    width:288px;
+    width:278px;
     padding-right:4%;
 }
 .cart-review .order-summary h3 {
@@ -123,8 +160,41 @@ md-toast {
     font-size: 0.7em;
     color: rgba(0,0,0,0.56);
 }
+
 .cart-review .order-summary h4 span {
     float:right;
     padding-left: 6px;
     color: rgba(0,0,0,0.87);
+}
+.cart-review .order-summary .place-order-button {
+    width:100%;
+    margin-bottom:8px;
+}
+
+.order-confirmation {
+    margin: 24px 48px;
+    padding:24px;
+}
+.order-confirmation h1 {
+    font-weight: 400;
+    font-size: 1.2em;
+    color: rgba(0,0,0,0.87);
+}
+.order-confirmation h2 {
+    font-weight: 400;
+    font-size: 0.8em;
+    color: rgba(0,0,0,0.87);
+    margin: 0;
+}
+.order-confirmation h2 span {
+    color: rgba(0,0,0,0.56);
+}
+
+.order-confirmation h3 {
+    font-weight: 600;
+    font-size: 0.7em;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:-8px;
+    padding-top:12px;
 }

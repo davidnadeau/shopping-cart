@@ -1,4 +1,4 @@
-<md-content class="cart-review">
+<md-content class="cart-review md-whiteframe-z2">
     <md-list layout="row" layout-wrap>
         <md-item class='product' ng-repeat="product in products" flex-gt-md="50" flex="100">
             <md-item-content layout="row">
@@ -47,8 +47,8 @@
                 <md-item>
                     <h4>Order Total: <span>{{totalPrice|currency}}</span></h4>
                 </md-item>
-                <md-item flex>
-                    <md-button class="md-raised md-primary"
+                <md-item>
+                    <md-button class="md-raised md-primary place-order-button"
                                ng-click="placeOrder()">Place Order
                     </md-button>
                 </md-item>

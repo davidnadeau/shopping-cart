@@ -2,7 +2,7 @@
  * Location of the server.
  * @type {string}
  */
-var BASE = "https://54.191.210.109/api/",
+var BASE = "https://topmovieshack.com/api/",
 	/**
 	 * Current api version this application is using.
 	 * @type {string}
@@ -49,11 +49,21 @@ angular.module('dnStore.shoppingCart', [
 				url: 'cart',
 				templateUrl: 'partials/cart.html',
 				controller: 'CartController'
+			},
+			/**
+			 * State in which the user sees the confirmation number and total of their order
+			 * @type {{url: string, templateUrl: string, controller: string}}
+			 */
+			successState = {
+				url: 'success',
+				templateUrl: 'partials/success.html',
+				controller: 'SuccessController'
 			};
 		$stateProvider
 			.state('store', mainState)
 			.state('store.products', viewProductsState)
-			.state('store.cart', viewCartState);
+			.state('store.cart', viewCartState)
+			.state('store.success', successState);
 
 		/**
 		 * Malformed urls should just redirect to the viewing state.

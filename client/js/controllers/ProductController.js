@@ -2,9 +2,18 @@ angular.module('dnStore.shoppingCart.controllers.ProductController', [])
 	.controller('ProductController', ['$scope', 'PaginatedProducts', 'Cart', '$mdToast', '$state',
 		function ($scope, PaginatedProducts, Cart, $mdToast, $state) {
 			PaginatedProducts.init();
+
+			// Update the cart summary on load
+			$scope.$parent.itemCount = Cart.count();
+			$scope.$parent.totalPrice = Cart.totalPrice();
+
 			$scope.loading = false;
 			$scope.products = [];
 			$scope.noMoreItems = false;
+
+			function isValidOrder() {
+				return angular.isNumber(Cart.totalPrice()) &&  Cart.totalPrice() > 0;
+			};
 
 			$scope.loadProducts = function () {
 				if ($scope.loading) return;
@@ -29,7 +38,7 @@ angular.module('dnStore.shoppingCart.controllers.ProductController', [])
 			};
 			$scope.addToCart = function (product, event) {
 				if ($scope.isValidQuantity(product.qty)) {
-					Cart.add(product);
+					Cart.add(angular.copy(product));
 					var pluralCheck = product.qty === 1 ? 'copy' : 'copies';
 					$mdToast.show($mdToast.simple()
 							.content(product.qty + ' ' + pluralCheck + ' of ' + product.name + ' added to cart')
@@ -47,7 +56,8 @@ angular.module('dnStore.shoppingCart.controllers.ProductController', [])
 			};
 
 			$scope.viewCart = function (event) {
-				$state.go('store.cart');
+				if (isValidOrder()) $state.go('store.cart');
+				else $mdToast.show($mdToast.simple().content('Add some movies to your cart'));
 			};
 			$scope.getImage = function (fileName) {
 				return S3_BUCKET + fileName;

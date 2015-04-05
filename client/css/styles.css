@@ -75,7 +75,7 @@ md-toast {
 .product-list .product .details {
     width:100%;
     background-color: rgba(0,0,0,0.8);
-    margin-top:-75px;
+    margin-top:-95px;
 }
 .product-list .product .details h2{
     padding-left:8px;
@@ -97,4 +97,34 @@ md-toast {
 }
 .product-list .product .details .qty{
     color: #ffffff;
+}
+
+.cart-review {}
+.cart-review .product {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.cart-review .rounded-image {
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    width: 100px;
+    height: 100px;
+}
+.cart-review .order-summary {
+    width:288px;
+    padding-right:4%;
+}
+.cart-review .order-summary h3 {
+    font-weight: 400;
+    font-size: 1.1em;
+}
+.cart-review .order-summary h4 {
+    font-weight: 400;
+    font-size: 0.7em;
+    color: rgba(0,0,0,0.56);
+}
+.cart-review .order-summary h4 span {
+    float:right;
+    padding-left: 6px;
+    color: rgba(0,0,0,0.87);
 }

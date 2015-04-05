@@ -1,5 +1,6 @@
 describe("Cart Factory", function() {
 	beforeEach(module('dnStore.shoppingCart'));
+	beforeEach(inject(function (Cart) {Cart.clear()}));
 
 	describe("When initializing", function() {
 		it("start with an empty list", inject(function (Cart) {

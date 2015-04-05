@@ -1,0 +1,58 @@
+<md-content class="cart-review">
+    <md-list layout="row" layout-wrap>
+        <md-item class='product' ng-repeat="product in products" flex-gt-md="50" flex="100">
+            <md-item-content layout="row">
+                <div class="md-tile-left">
+                    <img class="rounded-image" fallback-src="../images/img-not-found.png"
+                         ng-src="{{getImage(product.image_path)}}">
+                </div>
+                <div class="md-tile-content">
+                    <h4>{{product.name}}</h4>
+                    <h5>{{product.price|currency}}</h5>
+                    <md-input-container md-no-float>
+                        <input ng-change="updateCart(product)" type="number" step="1" ng-model="product.qty" min="1" max="100">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-button
+                            aria-label="Remove Product"
+                            ng-click="removeProduct(product, $event)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                        </svg>
+                    </md-button>
+                </div>
+            </md-item-content>
+            <md-divider></md-divider>
+        </md-item>
+    </md-list>
+    <div layout="column" layout-align="start end">
+        <div class="order-summary">
+            <md-list layout="column">
+                <md-item>
+                    <h3>
+                        <md-subheader class="md-primary">Order Summary</md-subheader>
+                    </h3>
+                </md-item>
+                <md-item>
+                    <h4>Subtotal: <span>{{subtotal|currency}}</span></h4>
+                </md-item>
+                <md-item>
+                    <h4>Shipping & Handling: <span>{{shippingAndHandling|currency}}</span></h4>
+                </md-item>
+                <md-item>
+                    <h4>Tax: <span>{{tax|currency}}</span></h4>
+                </md-item>
+                <md-divider></md-divider>
+                <md-item>
+                    <h4>Order Total: <span>{{totalPrice|currency}}</span></h4>
+                </md-item>
+                <md-item flex>
+                    <md-button class="md-raised md-primary"
+                               ng-click="placeOrder()">Place Order
+                    </md-button>
+                </md-item>
+            </md-list>
+        </div>
+    </div>
+</md-content>

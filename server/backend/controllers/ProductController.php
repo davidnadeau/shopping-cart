@@ -13,7 +13,7 @@ class ProductController extends \BaseController
      *
      * @return Response - paginated product list along with paging information
      */
-    public function all()
+    public function index()
     {
         // paginated object containing the product list and paging information
         $paginatedProductList = Product::paginatedList();

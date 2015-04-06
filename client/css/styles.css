@@ -34,20 +34,16 @@ md-toast {
     margin-left: 32px;
 }
 .dn-header .cart-summary {
-    top: 8px;
-    right: 8px;
 }
 .dn-header .cart-summary h3 {
     font-weight: 400;
-    font-size: 1.1em;
+    font-size: 0.95em;
 
 }
 .dn-header .cart-summary h3 span {
-    font-weight: 600;
-}
-.dn-header .cart-summary img{
-    width: 32px;
-    height: 32px;
+    font-weight: 400;
+    font-size: 1.1em;
+    padding-right: 8px;
 }
 .dn-hidden-header {
     position: fixed;
@@ -61,16 +57,16 @@ md-toast {
     right: 8px;
 }
 .dn-hidden-header .cart-summary h3 {
-    font-weight: 400;
-    font-size: 0.9em;
+    font-weight: 300;
+    font-size: 0.75em;
+
 }
 .dn-hidden-header .cart-summary h3 span {
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 0.8em;
+    padding-right: 8px;
 }
-.dn-hidden-header .cart-summary img{
-    width: 24px;
-    height: 24px;
-}
+
 .dn-progress-linear {
     height: 12px;
     margin-top: -6px;
@@ -132,10 +128,9 @@ md-toast {
     margin:0;
 }
 .cart-review .product md-input-container {
-    padding:0;
+    padding: 0 0 0 24px;
 }
 .cart-review .product input {
-    padding-left:24px;
     font-weight: 400;
     font-size: 0.8em;
     width:60px;
@@ -174,10 +169,14 @@ md-toast {
     margin: 24px 48px;
     padding:24px;
 }
+.order-confirmation img {
+    padding-right:16px;
+}
 .order-confirmation h1 {
     font-weight: 400;
     font-size: 1.2em;
     color: rgba(0,0,0,0.87);
+    padding-bottom: 8px;
 }
 .order-confirmation h2 {
     font-weight: 400;
@@ -191,9 +190,7 @@ md-toast {
 
 .order-confirmation h3 {
     font-weight: 600;
-    font-size: 0.7em;
-    margin-left:auto;
-    margin-right:auto;
+    font-size: 0.8em;
     margin-bottom:-8px;
     padding-top:12px;
 }

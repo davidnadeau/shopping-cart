@@ -2,6 +2,7 @@ angular.module('dnStore.shoppingCart.controllers.CartController', [])
 	.controller('CartController', ['$scope', "Cart", "Orders", "$state", "$mdToast",
 		function ($scope, Cart, Orders, $state, $mdToast) {
 			$scope.$parent.backButtonVisible = true;
+			$scope.$parent.cartSummaryVisible = false;
 			refreshCartTotals();
 
 

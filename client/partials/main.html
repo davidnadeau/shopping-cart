@@ -6,10 +6,9 @@
         <h2 class="md-toolbar-tools">
             <span ng-class="{'back-button-padding': backButtonVisible}">Top Movie Shack</span>
         </h2>
-        <div class="cart-summary" layout="row">
-            <img src="../images/add-to-cart.png">
-            <h3><span class="label">Items:</span> {{itemCount}}</h3>
-            <h3><span class="label">Total:</span> {{totalPrice|currency}}</h3>
+        <div ng-show="cartSummaryVisible" class="cart-summary" layout="row">
+            <h3 hide-sm>Items <span>{{itemCount}}</span></h3>
+            <h3>Subtotal <span>{{totalPrice|currency}}</span></h3>
         </div>
     </div>
 </md-toolbar>
@@ -18,10 +17,9 @@
         <h2 class="md-toolbar-tools">
             <span ng-class="{'back-button-padding': backButtonVisible}">Top Movie Shack</span>
         </h2>
-        <div class="cart-summary" layout="row">
-            <img src="../images/add-to-cart.png">
-            <h3><span class="label">Items:</span> {{itemCount}}</h3>
-            <h3><span class="label">Total:</span> {{totalPrice|currency}}</h3>
+        <div ng-show="cartSummaryVisible" class="cart-summary" layout="row">
+            <h3 hide-sm>Items <span>{{itemCount}}</span></h3>
+            <h3>Subtotal <span>{{totalPrice|currency}}</span></h3>
         </div>
     </div>
 </md-toolbar>

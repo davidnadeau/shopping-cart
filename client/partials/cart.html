@@ -10,7 +10,7 @@
                     <h4>{{product.name}}</h4>
                     <h5>{{product.price|currency}}</h5>
                     <md-input-container md-no-float>
-                        <input ng-change="updateCart(product)" type="number" step="1" ng-model="product.qty" min="1" max="100">
+                        <input ng-change="updateCart(product)" type="number" step="1" ng-model="product.qty" min="1" max="99999">
                     </md-input-container>
                 </div>
                 <div layout="row">

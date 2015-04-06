@@ -1,12 +1,13 @@
 angular.module('dnStore.shoppingCart.controllers.ProductController', [])
 	.controller('ProductController', ['$scope', 'PaginatedProducts', 'Cart', '$mdToast', '$state',
 		function ($scope, PaginatedProducts, Cart, $mdToast, $state) {
-			$scope.$parent.backButtonVisible = false;
-			PaginatedProducts.init();
-
 			// Update the cart summary on load
 			$scope.$parent.itemCount = Cart.count();
 			$scope.$parent.totalPrice = Cart.totalPrice();
+			$scope.$parent.backButtonVisible = false;
+			$scope.$parent.cartSummaryVisible = $scope.$parent.itemCount > 0;
+
+			PaginatedProducts.init();
 
 			$scope.loading = false;
 			$scope.products = [];
@@ -39,6 +40,7 @@ angular.module('dnStore.shoppingCart.controllers.ProductController', [])
 			};
 			$scope.addToCart = function (product, event) {
 				if ($scope.isValidQuantity(product.qty)) {
+					$scope.$parent.cartSummaryVisible = true;
 					Cart.add(angular.copy(product));
 					var pluralCheck = product.qty === 1 ? 'copy' : 'copies';
 					$mdToast.show($mdToast.simple()

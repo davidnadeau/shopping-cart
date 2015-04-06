@@ -4,6 +4,7 @@ angular.module('dnStore.shoppingCart.controllers.MainController', [])
 			$scope.itemCount = Cart.count();
 			$scope.totalPrice = Cart.totalPrice();
 			$scope.backButtonVisible = false;
+			$scope.cartSummaryVisible = false;
 
 			$scope.backHistory = function () {
 				$window.history.back();

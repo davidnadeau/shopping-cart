@@ -1,9 +1,12 @@
 <md-content class="order-confirmation md-whiteframe-z2" layout="column" layout-align="center start">
-    <h1>Thank you for shopping at Top Movie Shack.</h1>
+    <div layout="row" layout-align="center start">
+        <img src="../images/thumb_up.svg">
+        <h1>Thank you for shopping at Top Movie Shack.</h1>
+    </div>
     <h2>Your order has been processed successfully.</h2>
     <h2>Your final cost was <span>{{totalPrice|currency}}</span></h2>
     <h2>and your confirmation code is <span>{{confirmation}}</span></h2>
 
-    <h3>You will be redirected back to the store in 3 seconds.</h3>
+    <h3>You will be redirected back to the store in {{delay/1000}} seconds.</h3>
 </md-content>
 

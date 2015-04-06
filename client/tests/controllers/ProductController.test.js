@@ -15,6 +15,9 @@ describe("Product Controller", function() {
 		it("should have no items", function () {
 			expect($scope.products).toEqual( [] );
 		});
+		it("should hide the back button", function () {
+			expect($scope.$parent.backButtonVisible).toEqual( false );
+		});
 	});
 
 	describe("When loaded", function() {

@@ -2,6 +2,7 @@ describe("Main Controller", function() {
 	var $rootScope, $scope, $controller;
 
 	beforeEach(module('dnStore.shoppingCart'));
+	beforeEach(inject(function (Cart) {Cart.clear()}));
 
 	beforeEach(inject(function(_$rootScope_, _$controller_){
 		$rootScope = _$rootScope_;

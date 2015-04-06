@@ -1,5 +1,5 @@
 angular.module('dnStore.shoppingCart.services.PaginatedProducts', [])
-	.service('PaginatedProducts', ["Products", function (Products) {
+	.factory('PaginatedProducts', ["Products", function (Products) {
 		/**
 		 * Paging starts a 1 in Laravel.
 		 * @type {number}
@@ -49,6 +49,12 @@ angular.module('dnStore.shoppingCart.services.PaginatedProducts', [])
 				if (isLoading) return;
 				isLoading = true;
 				loadNewPage(callback);
+			},
+			/**
+			 * Get the current page. Used for testing.
+			 */
+			currentPage: function () {
+				return currentPage;
 			}
 		}
 	}]);

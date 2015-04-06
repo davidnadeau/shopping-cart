@@ -15,15 +15,15 @@ angular.module('dnStore.shoppingCart.controllers.CartController', [])
 				$scope.$parent.itemCount = Cart.count();
 				$scope.$parent.totalPrice = Cart.totalPrice();
 			}
-			function isValidOrder() {
-				return angular.isNumber($scope.totalPrice) && $scope.totalPrice > 0;
-			}
+			$scope.isValidOrder = function (price) {
+				return angular.isNumber(price) && price > 0;
+			};
 
 			$scope.getImage = function (fileName) {
 				return S3_BUCKET + fileName;
 			};
 			$scope.placeOrder = function () {
-				if (isValidOrder()) {
+				if ($scope.isValidOrder($scope.totalPrice)) {
 					Orders.place({order:Cart.toJson()});
 					$state.go('store.success');
 				}

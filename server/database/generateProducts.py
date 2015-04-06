@@ -82,7 +82,6 @@ def generateData():
 		res = json.loads(r.text)['responseData']
 		if res is not None:
 			for i in range(0, len(res['results'])):
-				print(res['results'][i]['visibleUrl'])
 				# if the image is on a blacklisted server, skip
 				if res['results'][i]['visibleUrl'] in blacklist:
 					continue

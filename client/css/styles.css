@@ -36,11 +36,13 @@ md-toast {
 .dn-header .cart-summary {
 }
 .dn-header .cart-summary h3 {
+    color: rgba(255,255,255,0.56);
     font-weight: 400;
     font-size: 0.95em;
 
 }
 .dn-header .cart-summary h3 span {
+    color: rgba(255,255,255,0.87);
     font-weight: 400;
     font-size: 1.1em;
     padding-right: 8px;
@@ -57,11 +59,13 @@ md-toast {
     right: 8px;
 }
 .dn-hidden-header .cart-summary h3 {
+    color: rgba(255,255,255,0.56);
     font-weight: 300;
     font-size: 0.75em;
 
 }
 .dn-hidden-header .cart-summary h3 span {
+    color: rgba(255,255,255,0.87);
     font-weight: 400;
     font-size: 0.8em;
     padding-right: 8px;
@@ -78,6 +82,7 @@ md-toast {
 }
 .product-list .product .details {
     width:100%;
+    background-color: rgb(0, 0, 0);
     background-color: rgba(0,0,0,0.8);
     margin-top:-85px;
 }
